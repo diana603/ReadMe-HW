@@ -1,10 +1,14 @@
 function generateMarkdown(data) {
   return `
-  # ${data.title}
   ## Description
-${data.description}
-
-  
+  # ${data.userName}
+  # ${data.title}
+  # ${data.Installation}
+  # ${data.usage}
+  # ${data.license}
+  # ${data.contributing}
+  # ${data.tests}
+  # ${data.questions}
   `;
 }
 

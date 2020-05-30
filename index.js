@@ -61,7 +61,7 @@ const questions = [
 
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data)
-}
+};
 // Created Prompt for user to enter in input 
 function init() {
     //got code from NPM website https://www.npmjs.com/package/inquirer
@@ -75,9 +75,13 @@ function init() {
         .catch(error => {
             if (error.isTtyError) {
                 // Prompt couldn't be rendered in the current environment
-            };
-        })
+            } else {
+                // Something else when wrong
+            }
+        });
 
-    init()
-};
+}
 
+init();
+// Fs.file this will save the file. use a string inside the file i'm creating
+//check right files.    
