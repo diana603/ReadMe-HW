@@ -1,11 +1,13 @@
 
+  [![Generic badge](https://img.shields.io/badge/Maintained-yes-blue)](https://shields.io/)
+  
   ## Description
-  # diana603
-  # moviephood
-  # materialize
-  # to help with decision making
-  # materialize
-  # karla megan and gus
-  # manual testing
-  # gus
+  # diana
+  # aldkgf
+  # how
+  # are
+  # you
+  # today
+  # i'm
+  # not 
   

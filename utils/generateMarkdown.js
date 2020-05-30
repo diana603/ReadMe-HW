@@ -1,5 +1,7 @@
 function generateMarkdown(data) {
   return `
+  [![Generic badge](https://img.shields.io/badge/Maintained-yes-blue)](https://shields.io/)
+  
   ## Description
   # ${data.userName}
   # ${data.title}
