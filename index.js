@@ -1,90 +1,83 @@
-let inquirer = require('inquirer');
+const inquirer = require('inquirer');
 const generateMarkDown = require("./utils/generateMarkDown");
+const fs = require('fs');
+const path = require('path');
 
 const questions = [
+    {
+        type: "input",
+        name: "userName",
+        message: " Please Enter User Name "
+    },
+    {
+        type: "input",
+        name: "title",
+        message: " Please Enter Name Of Project "
+
+    },
+    {
+        type: "input",
+        name: "description",
+        message: " Descripe Your Project "
+
+    },
+    {
+        type: "input",
+        name: "Installation",
+        message: " How did you install your project? "
+
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Whats the Purpose of Your Application? "
+
+    },
+    {
+        type: "input",
+        name: "license",
+        message: " What kind of license should your project have? "
+
+    },
+    {
+        type: "input",
+        name: "contributing",
+        message: " who helped with this project?  "
+
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: " What command was used to run the test? "
+
+    },
+    {
+        type: "input",
+        name: "questions",
+        message: " Who should be contacted for the repo? "
+    }
 
 ];
 
 function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
 }
 // Created Prompt for user to enter in input 
 function init() {
     //got code from NPM website https://www.npmjs.com/package/inquirer
     inquirer
-        .prompt([
-            {
-                type: "input",
-                name: "userName",
-                message: " Please Enter User Name "
-            },
-            {
-                type: "input",
-                name: "title",
-                message: " Please Enter Name Of Project "
-
-            },
-            {
-                type: "input",
-                name: "description",
-                message: " Descripe Your Project "
-
-            },
-            {
-                type: "input",
-                name: "tableOfContents",
-                message: "????"
-
-            },
-            {
-                type: "input",
-                name: "Installation",
-                message: " ? "
-
-            },
-            {
-                type: "input",
-                name: "usage",
-                message: " ????"
-
-            },
-            {
-                type: "input",
-                name: "license",
-                message: " ????? "
-
-            },
-            {
-                type: "input",
-                name: "contributing",
-                message: " ??? "
-
-            },
-            {
-                type: "input",
-                name: "tests",
-                message: " ??? "
-
-            },
-            {
-                type: "input",
-                name: "questions",
-                message: " ??? "
-
-            }
-        ])
+        .prompt(questions)
         .then(answers => {
-            generateMarkDown(answers);
-            console.log(answers);
+            writeToFile('TestReadMe.md', generateMarkDown({
+                ...answers
+            }));
         })
         .catch(error => {
             if (error.isTtyError) {
                 // Prompt couldn't be rendered in the current environment
-            } else {
-                // Something else when wrong
-            }
-        });
-}
+            };
+        })
 
-init();
-// Fs.file this will save the file. use a string inside the file i'm creating
-//check right files. 
+    init()
+};
+
