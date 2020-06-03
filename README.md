@@ -1,22 +1,15 @@
 [![Generic badge](https://img.shields.io/badge/Maintained-yes-blue)](https://shields.io/)
  
-  # ReadME Generator 
-  
-  ## User ID
-  ### diana603
-  ## Description
-  ### to help describe project
-  ## Installation
-  ### run node index.js in terminal 
-  ## Usage
-  ### to generate a readme
-  ## License
-  ### open source
-  ## Contributors
-  ### Michael, Elias, 
-  ## Tests
-  ### no test
-  ## Contact
-  ### Diana 
+# README Generator 
 
-  Please note i used the hw assignment to generate this readme. 
+This is a Node application that prompts the user a series of questions which than takes their response and generates a new markdown file.
+
+![Gif of App](./read-me.gif)
+
+# Installation
+
+- Clone this repo down by running `git clone` in your terminal and pasting in the SSH/HTTP link
+- After opening the project, run `npm i` or `npm install`
+
+# Contact
+https://github.com/diana603
